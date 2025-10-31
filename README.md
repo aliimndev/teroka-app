@@ -17,31 +17,36 @@ Teroka adalah aplikasi frontend untuk:
 
 ## 🗂 Struktur Folder
 
+# Struktur Folder Teroka Frontend
+
+```text
 src/
 ├─ app/
-│ ├─ page.tsx # Landing Page (CTA)
-│ ├─ search/
-│ │ └─ page.tsx # Search Page
-│ ├─ umkm/
-│ │ └─ [id]/
-│ │ └─ page.tsx # Detail UMKM Page
-│ └─ register/
-│ └─ page.tsx # Form Register UMKM
+│  ├─ page.tsx                 # Landing Page (CTA)
+│  ├─ search/
+│  │  └─ page.tsx              # Search Page
+│  ├─ umkm/
+│  │  └─ [id]/
+│  │      └─ page.tsx          # Detail UMKM Page
+│  └─ register/
+│      └─ page.tsx             # Form Register UMKM
 ├─ components/
-│ ├─ layout/ # SiteHeaderNavbar, SiteFooter
-│ ├─ ui/ # Button, Input, Card, Container
-│ ├─ shared/ # SearchBar, UmkmCard, SectionTitle
-│ └─ effects/ # Animasi / visual effect (Framer Motion)
+│  ├─ layout/                  # SiteHeaderNavbar, SiteFooter
+│  ├─ ui/                      # Button, Input, Card, Container
+│  ├─ shared/                  # SearchBar, UmkmCard, SectionTitle
+│  └─ effects/                 # Animasi / visual effect (Framer Motion)
 ├─ data/
-│ └─ umkm.json # Dummy data UMKM
+│  └─ umkm.json                # Dummy data UMKM
 ├─ hooks/
-│ └─ useFetch.ts # Custom fetch hook
-├─ lib/ # Utils & API integration (contoh gmaps.ts)
-├─ styles/ # globals.css, animations.css, theme.css
+│  └─ useFetch.ts              # Custom fetch hook
+├─ lib/                        # Utils & API integration (contoh gmaps.ts)
+├─ styles/                     # globals.css, animations.css, theme.css
 ├─ types/
-│ └─ umkm.d.ts # TypeScript types
+│  └─ umkm.d.ts                # TypeScript types
 └─ constants/
-└─ appConfig.ts # API_URL, MAPS_KEY, dll
+   └─ appConfig.ts             # API_URL, MAPS_KEY, dll
+
+```
 
 > **Note:** Semua gambar statis ada di `public/images/umkm/` dan logo/hero di `public/images/`.
 
