@@ -1,4 +1,4 @@
-# Teroka Frontend - Direktori UMKM
+# Teroka App - Direktori UMKM
 
 > Aplikasi web Teroka untuk menemukan dan mendaftar UMKM lokal di Indonesia  
 > Tech stack: **Next.js + TypeScript + Tailwind CSS + ESLint + App Router**
