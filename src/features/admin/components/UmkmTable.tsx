@@ -1,6 +1,6 @@
 'use client';
 
-import { Pencil, Trash2, Eye } from 'lucide-react';
+import { Pencil, Trash2, Eye, Package } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Table,
@@ -17,9 +17,10 @@ interface UmkmTableProps {
   onEdit: (umkm: Umkm) => void;
   onDelete: (id: string) => void;
   onView: (id: string) => void;
+  onManage: (umkm: Umkm) => void;
 }
 
-export function UmkmTable({ data, onEdit, onDelete, onView }: UmkmTableProps) {
+export function UmkmTable({ data, onEdit, onDelete, onView, onManage }: UmkmTableProps) {
   if (data.length === 0) {
     return (
       <div className="border rounded-lg p-12 text-center bg-gray-50">
@@ -96,6 +97,13 @@ export function UmkmTable({ data, onEdit, onDelete, onView }: UmkmTableProps) {
                     title="Lihat Detail"
                   >
                     <Eye className="h-4 w-4" />
+                  </button>
+                  <button
+                    onClick={() => onManage(umkm)}
+                    className="inline-flex items-center justify-center h-9 w-9 rounded-lg bg-purple-50 hover:bg-purple-100 text-purple-600 hover:text-purple-700 transition-colors"
+                    title="Kelola Produk & Review"
+                  >
+                    <Package className="h-4 w-4" />
                   </button>
                   <button
                     onClick={() => onEdit(umkm)}

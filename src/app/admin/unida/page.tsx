@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { UmkmTable } from '@/features/admin/components/UmkmTable';
 import { UmkmFormDialog } from '@/features/admin/components/UmkmFormDialog';
 import { ImportExportButtons } from '@/features/admin/components/ImportExportButtons';
+import { ProductsReviewsDialog } from '@/features/admin/components/ProductsReviewsDialog';
 import { Umkm } from '@/types/umkm';
 import { toast } from 'sonner';
 
@@ -20,6 +21,8 @@ export default function AdminUmkmPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [selectedUmkm, setSelectedUmkm] = useState<Umkm | null>(null);
+  const [isManageOpen, setIsManageOpen] = useState(false);
+  const [manageUmkm, setManageUmkm] = useState<Umkm | null>(null);
 
   // Fetch data on mount
   useEffect(() => {
@@ -74,6 +77,11 @@ export default function AdminUmkmPage() {
 
   const handleView = (id: string) => {
     router.push(`/umkm/${id}`);
+  };
+
+  const handleManage = (umkm: Umkm) => {
+    setManageUmkm(umkm);
+    setIsManageOpen(true);
   };
 
   const handleDelete = async (id: string) => {
@@ -248,6 +256,7 @@ export default function AdminUmkmPage() {
             onEdit={handleEdit}
             onDelete={handleDelete}
             onView={handleView}
+            onManage={handleManage}
           />
         )}
 
@@ -266,6 +275,16 @@ export default function AdminUmkmPage() {
         umkm={selectedUmkm}
         onSubmit={handleFormSubmit}
       />
+
+      {/* Products & Reviews Management Dialog */}
+      {manageUmkm && (
+        <ProductsReviewsDialog
+          open={isManageOpen}
+          onOpenChange={setIsManageOpen}
+          umkmId={manageUmkm.id}
+          umkmName={manageUmkm.name}
+        />
+      )}
     </div>
   );
 }
