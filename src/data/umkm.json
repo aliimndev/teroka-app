@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Warung Nasi Bu Ani",
+    "category": "makanan",
+    "description": "Nasi rames dengan lauk pilihan",
+    "address": "Jl. Merdeka No. 123",
+    "city": "Jakarta",
+    "province": "DKI Jakarta",
+    "latitude": -6.2088,
+    "longitude": 106.8456,
+    "rating": 4.5,
+    "image": "",
+    "contact": "+62812345678",
+    "operating_hours": "08:00-21:00"
+  },
+  {
+    "id": 2,
+    "name": "Bengkel Maju Jaya",
+    "category": "jasa",
+    "description": "Service kendaraan motor dan mobil",
+    "address": "Jl. Industri No. 45",
+    "city": "Bandung",
+    "province": "Jawa Barat",
+    "latitude": -6.9175,
+    "longitude": 107.6191,
+    "rating": 4.2,
+    "image": "",
+    "contact": "+62898765432",
+    "operating_hours": "09:00-18:00"
+  },
+  {
+    "id": 3,
+    "name": "Toko Kue Nyonya",
+    "category": "makanan",
+    "description": "Kue tradisional dan modern",
+    "address": "Jl. Sudirman No. 78",
+    "city": "Surabaya",
+    "province": "Jawa Timur",
+    "latitude": -7.2575,
+    "longitude": 112.7521,
+    "rating": 4.8,
+    "image": "",
+    "contact": "+62811223344",
+    "operating_hours": "07:00-20:00"
+  }
+]

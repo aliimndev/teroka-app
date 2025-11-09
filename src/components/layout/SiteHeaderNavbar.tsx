@@ -32,49 +32,51 @@ export default function SiteHeaderNavbar() {
       <nav
         className={`container h-full mx-auto flex items-center justify-between px-4 py-4 md:px-6 ${montserrat.className}`}
       >
-        <Link href="/" className="flex items-center space-x-1">
-          <span
-            className={`text-2xl md:text-3xl font-bold tracking-tight leading-none ${montserrat.className} text-gray-900`}
-          >
-            TER
-          </span>
-          <Image
-            src="/images/logo.png"
-            alt="★"
-            width={20}
-            height={20}
-            className="h-5 w-auto md:h-6 lg:h-7"
-          />
-          <span
-            className={`text-2xl md:text-3xl font-bold tracking-tight leading-none ${montserrat.className} text-gray-900`}
-          >
-            KA
-          </span>
-        </Link>
+        <div className="w-full flex flex-col items-center gap-y-2">
+          <Link href="/" className="flex items-center space-x-1">
+            <span
+              className={`text-2xl md:text-3xl font-bold tracking-tight leading-none ${montserrat.className} text-gray-900`}
+            >
+              TER
+            </span>
+            <Image
+              src="/images/logo.png"
+              alt="★"
+              width={20}
+              height={20}
+              className="h-5 w-auto md:h-6 lg:h-7"
+            />
+            <span
+              className={`text-2xl md:text-3xl font-bold tracking-tight leading-none ${montserrat.className} text-gray-900`}
+            >
+              KA
+            </span>
+          </Link>
 
-        <ul className="hidden md:flex items-center space-x-8 text-sm font-medium">
-          {navItems.map((item) => {
-            const isActive = pathname === item.href;
+          <ul className="hidden md:flex items-center space-x-8 text-sm font-medium">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
 
-            return (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={clsx(
-                    "relative pb-1 transition-colors hover:text-gray-900",
-                    isActive ? "text-gray-900" : "text-gray-600"
-                  )}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0 h-0.5 w-full bg-[#D9302C]" />
-                  )}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={clsx(
+                      "relative pb-1 transition-colors hover:text-gray-900",
+                      isActive ? "text-gray-900" : "text-gray-600"
+                    )}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 h-0.5 w-full bg-[#D9302C]" />
+                    )}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
 
         <button
           onClick={toggleMenu}
