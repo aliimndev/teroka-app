@@ -307,7 +307,7 @@ export default function RegisterPage() {
                   {currentStep === 1 ? 'Batal' : 'Sebelumnya'}
                 </Button>
 
-                {currentStep < STEPS.length ? (
+                {currentStep !== 4 ? (
                   <Button
                     type="button"
                     onClick={handleNext}

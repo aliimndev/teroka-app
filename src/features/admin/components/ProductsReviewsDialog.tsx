@@ -186,9 +186,9 @@ export function ProductsReviewsDialog({ open, onOpenChange, umkmId, umkmName }: 
             <DialogTitle>Kelola Produk & Review - {umkmName}</DialogTitle>
           </DialogHeader>
 
-          <div className="py-4">
+          <div className="py-6 px-6">
             {/* Tabs */}
-            <div className="flex border-b mb-6">
+            <div className="flex border-b mb-6 -mx-6 px-6">
               <button
                 onClick={() => setActiveTab('products')}
                 className={`px-6 py-3 font-medium transition-colors ${
