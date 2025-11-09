@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 
-import { UmkmCard, SectionTitle } from '@/components/shared';
+import { UmkmCard } from '@/components/shared/UmkmCard';
+import { SectionTitle } from '@/components/shared/SectionTitle';
 import { Container } from '@/components/ui';
-import { Button } from '@/components/ui/button';
 
 import { Umkm } from '@/types/umkm';
 
@@ -63,7 +63,7 @@ export default function Results({
       )}
 
       <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5 gap-4 md:gap-6">
-        {filteredUmkm.slice(0, 8).map((umkm, index) => (
+        {filteredUmkm.map((umkm, index) => (
           <motion.div
             key={umkm.id}
             initial={{ opacity: 0, y: 20 }}
@@ -82,17 +82,7 @@ export default function Results({
         ))}
       </div>
 
-      {filteredUmkm.length > 8 && (
-        <div className="text-center mt-10">
-          <Button
-            size="lg"
-            className="rounded-full bg-red-600 hover:bg-red-700 text-white px-8 py-6"
-          >
-            Lihat Semua
-          </Button>
-        </div>
-      )}
-
+  
       {locationEnabled && (
         <p className="mt-8 text-center text-sm text-green-600 font-medium">
           Menampilkan UMKM di sekitar lokasi Anda

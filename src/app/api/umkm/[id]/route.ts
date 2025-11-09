@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
-// Mock data UMKM
+// Mock data - sama dengan di API route utama
 const mockUmkmData = [
   {
     id: '1',
@@ -84,17 +84,38 @@ const mockUmkmData = [
   }
 ];
 
-export async function GET() {
+export async function GET(
+  request: NextRequest,
+  context: { params: Promise<{ id: string }> }
+) {
   try {
+    const params = await context.params;
+    console.log('Searching for UMKM with ID:', params.id);
+
+    const umkm = mockUmkmData.find(item => item.id === params.id);
+    console.log('Found UMKM:', umkm);
+
+    if (!umkm) {
+      return NextResponse.json(
+        {
+          success: false,
+          data: null,
+          message: 'UMKM tidak ditemukan'
+        },
+        { status: 404 }
+      );
+    }
+
     // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise(resolve => setTimeout(resolve, 300));
 
     return NextResponse.json({
       success: true,
-      data: mockUmkmData,
-      message: 'Data berhasil dimuat'
+      data: umkm,
+      message: 'Data UMKM berhasil dimuat'
     });
-  } catch {
+  } catch (error) {
+    console.error('API Error:', error);
     return NextResponse.json(
       {
         success: false,

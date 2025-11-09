@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server';
+import { Umkm } from '@/types/umkm';
 
-// Mock data UMKM
+// Mock data - ini sama dengan data di API route
 const mockUmkmData = [
   {
     id: '1',
@@ -84,24 +84,10 @@ const mockUmkmData = [
   }
 ];
 
-export async function GET() {
-  try {
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 500));
+export function getUmkmById(id: string): Umkm | null {
+  return mockUmkmData.find(umkm => umkm.id === id) || null;
+}
 
-    return NextResponse.json({
-      success: true,
-      data: mockUmkmData,
-      message: 'Data berhasil dimuat'
-    });
-  } catch {
-    return NextResponse.json(
-      {
-        success: false,
-        data: null,
-        message: 'Gagal memuat data UMKM'
-      },
-      { status: 500 }
-    );
-  }
+export function getAllUmkm(): Umkm[] {
+  return mockUmkmData;
 }

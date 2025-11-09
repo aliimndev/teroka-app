@@ -9,6 +9,8 @@ import { Umkm } from '@/types/umkm';
 import Hero from './Hero';
 import CategoryTabs from './CategoryTabs';
 import Results from './Results';
+import { WhyTeroka } from './WhyTeroka';
+import { FaqCompact } from './FaqCompact';
 
 type Category = 'semua' | 'makanan' | 'minuman' | 'jasa' | 'fashion';
 
@@ -82,6 +84,10 @@ export default function SearchPage() {
         error={error}
         locationEnabled={locationEnabled}
       />
+
+      <WhyTeroka />
+
+      <FaqCompact />
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { MapPin } from 'lucide-react';
-import { SearchBar } from '@/components/shared';
+import { SearchBar } from '@/components/shared/SearchBar';
 import { Button } from '@/components/ui/button';
 
 interface HeroProps {

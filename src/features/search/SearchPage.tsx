@@ -2,13 +2,11 @@
 
 import { useState, useMemo } from 'react';
 import { toast } from 'sonner';
-
 import { useFetch } from '@/hooks/useFetch';
 import { Umkm } from '@/types/umkm';
-
-import Hero from '@/pages/Search/Hero';
-import CategoryTabs from '@/pages/Search/CategoryTabs';
-import Results from '@/pages/Search/Results';
+import Hero from '@/pages/search/Hero';
+import CategoryTabs from '@/pages/search/CategoryTabs';
+import Results from '@/pages/search/Results';
 
 type Category = 'semua' | 'makanan' | 'minuman' | 'jasa' | 'fashion';
 
