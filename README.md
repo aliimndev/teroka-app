@@ -389,8 +389,7 @@ npm run start
 **Project Maintainer:** [Aliimn Dev](https://github.com/aliimndev)
 
 **Contact:**
-- 📧 Email: [your-email@example.com]
-- 💬 Discord: [Your Discord]
+- 📧 Email: [devaliimn@gmail.com]
 - 🐛 Issues: [GitHub Issues](https://github.com/aliimndev/teroka-app/issues)
 
 ---
